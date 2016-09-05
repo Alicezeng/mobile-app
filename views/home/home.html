@@ -1,0 +1,85 @@
+<ion-view hide-nav-bar="true" id="home">
+    <ion-header-bar class="bar-assertive item-input-inset " id="headericons">
+        <label class="item-input-wrapper">
+            <i class="icon ion-search "></i>
+            <input type="text" placeholder="连衣裙"/>
+        </label>
+        <a href="#tabs/user"><i class="icon ion-ios-bell-outline padding header-icon cartshopping"></i></a>
+        <a href="#tabs/shopping"><i class="icon ion-ios-cart-outline padding header-icon cartshopping"></i></a>
+    </ion-header-bar>
+    <ion-content overflow-scroll="true" ng-controller="homeCtrl">
+        <ion-slide-box auto-play="true" does-continue="true" show-pager="true" id="banner">
+            <ion-slide>
+                <div class="box"><a href="#tabs/detail"><img src="images/1.jpg"></a></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box"><a href="#tabs/detail"><img src="images/2.jpg"></a></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box"><a href="#tabs/detail"><img src="images/1.jpg"></a></div>
+            </ion-slide>
+            <ion-slide>
+                <div class="box"><a href="#tabs/detail"><img src="images/2.jpg"></a></div>
+            </ion-slide>
+        </ion-slide-box>
+        <div class="row" id="select1">
+            <div class="col">
+                <div class="box1"><a href="#tabs/dress"><img src="images/homenav1.png"></a></div>
+            </div>
+            <div class="col">
+                <div class="box1"><a href="#tabs/dress"><img src="images/homenav2.png"></a></div>
+            </div>
+            <div class="col">
+                <div class="box1"><a href="#tabs/dress"><img src="images/homenav3.png"></a></div>
+            </div>
+            <div class="col">
+                <div class="box1"><a href="#tabs/dress"><img src="images/homenav4.png"></a></div>
+            </div>
+        </div>
+        <div class="showone clearfix">
+            <div class="inner">
+                <div class="showonetit"><img src="images/hometit1.jpg"></div>
+                <div class="row card">
+                    <div class="col col-67 leftone">
+                        <div><a href="#tabs/detail"><img src="images/t1.jpg"/></a></div>
+                    </div>
+                    <div class="col col-33 rightone">
+                        <div><a href="#tabs/detail"><img src="images/t2.jpg"/></a></div>
+                        <div><a href="#tabs/detail"><img src="images/t2.jpg"/></a></div>
+                        <div><a href="#tabs/detail"><img src="images/t2.jpg"/></a></div>
+                    </div>
+                </div>
+                <div class="showonetit"><img src="images/hometit2.jpg"></div>
+                <div class="row hot">
+                    <div class="col">
+                        <div><a href="#tabs/detail"><img src="images/t3.jpg"/><span>情侣穿搭</span></a></div>
+                    </div>
+                    <div class="col">
+                        <div><a href="#tabs/detail"><img src="images/t3.jpg"/><span>情侣穿搭</span></a></div>
+                    </div>
+                    <div class="col">
+                        <div><a href="#tabs/detail"><img src="images/t3.jpg"/><span>情侣穿搭</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="showone clearfix">
+            <div class="inner">
+                <div class="showonetit"><img src="images/hometit3.jpg"></div>
+                <div class="row">
+                    <div class="col">
+                        <div><a href="#tabs/detail"><img src="images/t4.jpg"/></a></div>
+                    </div>
+                </div>
+                <div>
+                    <div ng-repeat="home in homes" >
+                        <div class="shirt" ><a href="#tabs/detail"><img ng-src="{{home.imgsrc}}"/><span>{{home.des}}</span></a></div>
+                    </div>
+                    <!--无限滚动-->
+                    <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+    <div class="button icon ion-ios-arrow-up top"  ng-click="toTop()"></div>
+</ion-view>

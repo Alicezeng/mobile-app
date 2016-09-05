@@ -1,0 +1,21 @@
+<ion-view view-title="裙装精选" class="light-bg">
+    <ion-content class="stable-bg">
+        <div class="clearfix">
+            <div class="list card " ng-repeat="skirt in skirts">
+                <div class="item item-image">
+                    <img ng-src="{{skirt.imgsrc}}">
+                </div>
+                <div class="item des">
+                    {{skirt.des}}
+                </div>
+                <div class="item price">
+                    <span>{{skirt.nowprice}}</span>
+                    <del>{{skirt.oldprice}}</del>
+                </div>
+            </div>
+            <!--无限滚动-->
+            <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+        </div>
+    </ion-content>
+    <div class="button icon ion-ios-arrow-up top" ng-click="toTop()"></div>
+</ion-view>

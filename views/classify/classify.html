@@ -1,0 +1,56 @@
+<ion-view hide-nav-bar="true">
+    <ion-header-bar class="bar-assertive item-input-inset " id="headericons">
+        <label class="item-input-wrapper">
+            <input type="text" placeholder="连衣裙"/>
+        </label>
+        <i class="icon ion-search padding header-icon"></i>
+    </ion-header-bar>
+    <ion-content ng-controller="classifyCtrl">
+        <div class="category"><img src="images/hometit4.png"></div>
+        <div class="classfiy">
+            <div class="box1">
+                <a ui-sref="tabs.jacket"><img src="images/c1.jpg"><span>上衣</span></a>
+            </div>
+            <div class="box1">
+                <a ui-sref="tabs.pant"><img src="images/c2.jpg"><span>裤子</span></a>
+            </div>
+            <div class="box1">
+                <a ui-sref="tabs.skirt"><img src="images/c3.png"><span>裙装</span></a>
+            </div>
+            <div class="box1">
+                <a ui-sref="tabs.shoe"><img src="images/c4.jpg"><span>鞋子</span></a>
+            </div>
+            <div class="box1">
+                <a ui-sref="tabs.jacket"><img src="images/c5.jpg"><span>包包</span></a>
+            </div>
+            <div class="box1">
+                <a ui-sref="tabs.pant"><img src="images/c6.jpg"><span>配饰</span></a>
+            </div>
+            <div class="box1">
+                <a ui-sref="tabs.shoe"><img src="images/c7.jpg"><span>内衣</span></a>
+            </div>
+            <div class="box1">
+                <a ui-sref="tabs.skirt"><img src="images/c8.jpg"><span>家居</span></a>
+            </div>
+        </div>
+        <div class="category"><img src="images/hometit5.png"></div>
+        <div class="brand">
+            <div class="box2"><a href="#"><img src="images/p1.png"></a></div>
+            <div class="box2"><a href="#"><img src="images/p2.jpg"></a></div>
+            <div class="box2"><a href="#"><img src="images/p3.png"></a></div>
+            <div class="box2"><a href="#"><img src="images/p4.png"></a></div>
+            <div class="box2"><a href="#"><img src="images/p1.png"></a></div>
+            <div class="box2"><a href="#"><img src="images/p2.jpg"></a></div>
+            <div class="box2"><a href="#"><img src="images/p3.png"></a></div>
+            <div class="box2"><a href="#"><img src="images/p4.png"></a></div>
+        </div>
+        <div class="brand">
+            <div ng-repeat="classify in classifies" >
+                <div class="box2"><a href="#"><img ng-src="{{classify.imgsrc}}"></a></div>
+            </div>
+            <!--无限滚动-->
+            <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+        </div>
+    </ion-content>
+    <!--<div class="button icon ion-ios-arrow-up top"  ng-click="toTop()"></div>-->
+</ion-view>

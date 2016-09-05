@@ -1,0 +1,21 @@
+<ion-view view-title="登录" class="light-bg">
+    <ion-content>
+        <form name="registerForm" novalidate>
+            <div class=" item item-input-inset ">
+                <label class="item-input-wrapper">
+                    <div class="login"><img src="images/login1.png"/></div>
+                    <span class="input-label">账号</span>
+                    <input type="text" placeholder="请输入账号" name="pname" ng-model="pname" required/>
+                </label>
+            </div>
+            <div class=" item-input-inset ">
+                <label class="item-input-wrapper">
+                    <div class="login"><img src="images/password2.png"/></div>
+                    <span class="input-label">密码</span>
+                    <input type="password" placeholder="密码不少于6位" name="pword" ng-model="pword"  ng-minlength="6" required/>
+                </label>
+            </div>
+            <div class="btn3"><a class="button button-assertive" href="#tabs/home" ng-disabled="registerForm.$invalid">登录</a></div>
+        </form>
+    </ion-content>
+</ion-view>

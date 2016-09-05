@@ -1,0 +1,18 @@
+<ion-view view-title="推荐搭配" class="light-bg">
+    <ion-content>
+        <div class="dressbox clearfix">
+            <div class="list card dress" ng-repeat="dress in dresses">
+                <div class="item item-image">
+                    <img ng-src="{{dress.imgsrc}}">
+                </div>
+                <div class="item likes">
+                    <span>{{dress.name}}</span>
+                    <div><i class="icon ion-heart"></i>{{dress.likes}}</div>
+                </div>
+            </div>
+            <!--无限滚动-->
+            <ion-infinite-scroll on-infinite="loadMore()" immediate-check="false"></ion-infinite-scroll>
+        </div>
+    </ion-content>
+    <div class="button icon ion-ios-arrow-up top"  ng-click="toTop()"></div>
+</ion-view>
