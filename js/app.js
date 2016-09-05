@@ -1,5 +1,6 @@
 var myapp=angular.module("myapp",["ionic"]);
 myapp.config(function($stateProvider,$urlRouterProvider,$ionicConfigProvider){
+    $ionicConfigProvider.tabs.position('bottom'); // Tab位置
     $ionicConfigProvider.backButton.text("");
     $ionicConfigProvider.backButton.previousTitleText("");
     $stateProvider.state("tour",{
